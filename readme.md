@@ -9,4 +9,4 @@ Need to learn HTML-intermediate
 **Flask SQL Alchemy** - This is an ORM mapper, which helps to add modification to the databases directly from python
 
 
-**Jinja templeting**
+**Jinja templeting** - Jinja2 is a templating tool to send python veriables

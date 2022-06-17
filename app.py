@@ -1,5 +1,5 @@
 from email.policy import default
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -18,8 +18,11 @@ class visitor_list(db.Model):
     def __repr__(self) -> str:
         return f"{self.sno} - {self.name}"
 
-@app.route("/")
+@app.route("/", methods=["GET","POST"])
 def hello_world():
+
+    if request.method == 'POST':
+        print("post")
 
     #whenever the page loads this gets logged in the database
     visitor_log = visitor_list(email_id="xyz@lol.com", name="random",company="abc")
