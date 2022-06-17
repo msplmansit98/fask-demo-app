@@ -9,3 +9,6 @@
 9. To add space between components add "my-5"(for top margin) and "mb-3"(for bottom margin) in class. e.g.- <div class="container my-5"></div>
 10. Create a database class for your flask app.
 11. Installing flask-sqlalchemy
+12. Creating the first table from model class
+13. __repr__ -> whenever the object is printed that will printed
+14. Create the database using the class created <db.create_all()>
