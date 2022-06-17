@@ -8,3 +8,5 @@ Need to learn HTML-intermediate
 
 **Flask SQL Alchemy** - This is an ORM mapper, which helps to add modification to the databases directly from python
 
+
+**Jinja templeting**

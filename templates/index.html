@@ -89,27 +89,19 @@
                 <th scope="col">E-mail</th>
                 <th scope="col">Name</th>
                 <th scope="col">Company Name</th>
+                <th scope="col">Time logged in</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>msplmansit@gmail.com</td>
-                <td>Mansit Suman</td>
-                <td>Leaper.in</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>moru666@gmail.com</td>
-                <td>Prathamesh Themdeo</td>
-                <td>Leaper.in</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>jaya.reddy@themathcompany.com</td>
-                <td>Jaya Krishna Reddy</td>
-                <td>TheMathCompany</td>
-              </tr>
+                {% for visitor in all_visitors  %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{visitor.email_id}}</td>
+                    <td>{{visitor.name}}</td>
+                    <td>{{visitor.company}}</td>
+                    <td>{{visitor.logged_time}}</td>
+                  </tr>  
+                {% endfor %}
             </tbody>
           </table>
     </div>

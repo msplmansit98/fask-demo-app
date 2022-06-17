@@ -12,3 +12,5 @@
 12. Creating the first table from model class
 13. __repr__ -> whenever the object is printed that will printed
 14. Create the database using the class created <db.create_all()>
+15. Check your data on sqllite viewer.
+16. Make your data table display on frontend

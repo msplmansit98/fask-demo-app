@@ -26,11 +26,14 @@ def hello_world():
     db.session.add(visitor_log)
     db.session.commit()
 
-    return render_template('index.html')
+    all_visitors = visitor_list.query.all()
+    return render_template('index.html',all_visitors=all_visitors)
     #return "<p>Hello, World!</p>"
 
-@app.route("/products")
+@app.route("/show")
 def products():
+    all_visitors = visitor_list.query.all()
+    print(all_visitors)
     return "<p>This is the product page</p>"
 
 if __name__ == "__main__":
