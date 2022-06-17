@@ -1,0 +1,1 @@
+This is the file you can directly render by using - http://127.0.0.1:8000/static/demo_text.txt

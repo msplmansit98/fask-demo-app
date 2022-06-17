@@ -1,0 +1,10 @@
+1. Static and templates folders should be created separately. And their spelling should be correct
+2. Don't keep your files in static folder.
+3. In index.html "!" gives you the boiler plate.
+4. To render index.html you need to import render_template in app.py and have render_template("index.html") in return.
+5. To get started take some codes from bootstrap
+6. You can use any "component" from bootstrap website and paste it inside body.
+7. Added navbar.
+8. type div.container to get a boiler plate
+9. To add space between components add "my-5"(for top margin) and "mb-3"(for bottom margin) in class. e.g.- <div class="container my-5"></div>
+10. Create a database class for your flask app.
