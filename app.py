@@ -20,6 +20,12 @@ class visitor_list(db.Model):
 
 @app.route("/")
 def hello_world():
+
+    #whenever the page loads this gets logged in the database
+    visitor_log = visitor_list(email_id="xyz@lol.com", name="random",company="abc")
+    db.session.add(visitor_log)
+    db.session.commit()
+
     return render_template('index.html')
     #return "<p>Hello, World!</p>"
 
