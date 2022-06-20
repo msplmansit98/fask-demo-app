@@ -22,3 +22,4 @@
 22. Added message for no records
 23. Added update.html using jinja template inheritance
 24. Added base.html
+25. Made modification to add deploy the app to heroku
