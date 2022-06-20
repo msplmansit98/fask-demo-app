@@ -1,5 +1,7 @@
 # Flask Demo Project
 
+> **Link for the app** - https://ms-flask-demo-app.herokuapp.com/
+
 > **Flask Official Documentation link** - https://flask.palletsprojects.com/en/2.1.x/
 
 > **Bootstrap URL** - https://getbootstrap.com/
