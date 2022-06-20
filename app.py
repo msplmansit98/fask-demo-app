@@ -66,5 +66,10 @@ def update_row(sno):
     
     return render_template('update.html', visitor=visitor)
 
+@app.route("/about")
+def about():
+   
+    return render_template('about.html')
+
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
