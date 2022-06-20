@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}
+    Update
+{% endblock title %}
+{% block body %}
+
+<div class="container my-3">
+    <h3>Update your record</h3>
+    <form action="/update/{{visitor.sno}}" method="POST">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="exampleInputEmail1" value = "{{visitor.email_id}}" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleName1" class="form-label">Your Name</label>
+            <input type="name" class="form-control" name="name" value = "{{visitor.name}}" id = "exampleName1">
+        </div>
+        <div class="mb-3">
+            <label for="examplecompany1" class="form-label">Your company name</label>
+            <input type="company" class="form-control" name="company" value = "{{visitor.company}}" id = "examplecompany1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Do you want your name to appear here</label>
+        </div>
+        <button type="submit" class="btn btn-dark">Update</button>
+    </form>
+</div>
+
+<!-- <div class="container">
+    <h3>This is the visitor list</h3>
+
+
+    {% if all_visitors|length== 0 %}
+    <div class="alert alert-danger" role="alert">
+        Add the new records now!
+    </div>
+
+    {% else %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Name</th>
+                <th scope="col">Company Name</th>
+                <th scope="col">Time logged in</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for visitor in all_visitors %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{visitor.email_id}}</td>
+                <td>{{visitor.name}}</td>
+                <td>{{visitor.company}}</td>
+                <td>{{visitor.logged_time}}</td>
+                <td><a href="/update/{{visitor.sno}}" type="button"
+                        class="btn btn-outline-secondary btn-sm">Update</button></td>
+                <td><a href="/delete/{{visitor.sno}}" type="button"
+                        class="btn btn-outline-secondary btn-sm">Delete</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endif %}
+
+</div> -->
+
+{% endblock body  %}

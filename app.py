@@ -49,12 +49,22 @@ def delete_row(sno):
     db.session.commit()
     return redirect("/")
 
-# @app.route("/update/<int:sno>")
-# def delete_row(sno):
-#     visitor = visitor_list.query.filter_by(sno=sno).first()
-#     visitor.email_id
-#     db.session.commit()
-#     return redirect("/")
+@app.route("/update/<int:sno>", methods=["GET","POST"])
+def update_row(sno):
+    if request.method == 'POST':
+        visitor = visitor_list.query.filter_by(sno=sno).first()
+        visitor.email_id=request.form["email"]
+        visitor.name=request.form['name']
+        visitor.company=request.form['company']
+        #db.session.add(visitor)
+        db.session.commit()
+
+        return redirect('/')
+
+    else:
+        visitor = visitor_list.query.filter_by(sno=sno).first()
+    
+    return render_template('update.html', visitor=visitor)
 
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
