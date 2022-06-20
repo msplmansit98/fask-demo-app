@@ -20,3 +20,5 @@
 20. Added update and delete buttons in the table and their actions with redirecting option
 21. If visitor list is empty, they show a message. added in index.html page
 22. Added message for no records
+23. Added update.html using jinja template inheritance
+24. Added base.html
