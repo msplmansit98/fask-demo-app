@@ -16,3 +16,7 @@
 16. Install Jinja2 Snippet Kit
 17. Make your data table display on frontend using jinja2 template
 18. Adding POST action to submit button
+19. href -> refers to what goes into the link 
+20. Added update and delete buttons in the table and their actions with redirecting option
+21. If visitor list is empty, they show a message. added in index.html page
+22. Added message for no records

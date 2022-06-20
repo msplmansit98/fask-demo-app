@@ -10,3 +10,5 @@ Need to learn HTML-intermediate
 
 
 **Jinja templeting** - Jinja2 is a templating tool to send python veriables
+
+> **Markdown guide** - https://www.markdownguide.org/basic-syntax/

@@ -1,5 +1,5 @@
 from email.policy import default
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -22,13 +22,16 @@ class visitor_list(db.Model):
 def hello_world():
 
     if request.method == 'POST':
-        print("post")
+        visitor_log = visitor_list(email_id=request.form["email"], name=request.form['name'],company=request.form['company'])
+        db.session.add(visitor_log)
+        db.session.commit()
 
-    #whenever the page loads this gets logged in the database
-    visitor_log = visitor_list(email_id="xyz@lol.com", name="random",company="abc")
-    db.session.add(visitor_log)
-    db.session.commit()
+    # #whenever the page loads this gets logged in the database
+    # visitor_log = visitor_list(email_id="xyz@lol.com", name="random",company="abc")
+    # db.session.add(visitor_log)
+    # db.session.commit()
 
+    #Querying all the records
     all_visitors = visitor_list.query.all()
     return render_template('index.html',all_visitors=all_visitors)
     #return "<p>Hello, World!</p>"
@@ -38,6 +41,20 @@ def products():
     all_visitors = visitor_list.query.all()
     print(all_visitors)
     return "<p>This is the product page</p>"
+
+@app.route("/delete/<int:sno>")
+def delete_row(sno):
+    visitor = visitor_list.query.filter_by(sno=sno).first()
+    db.session.delete(visitor)
+    db.session.commit()
+    return redirect("/")
+
+# @app.route("/update/<int:sno>")
+# def delete_row(sno):
+#     visitor = visitor_list.query.filter_by(sno=sno).first()
+#     visitor.email_id
+#     db.session.commit()
+#     return redirect("/")
 
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
